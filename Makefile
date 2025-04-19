@@ -11,6 +11,8 @@ SRC_FILES = ft_isalpha_test.c \
 			ft_isprint_test.c \
 			ft_strlen_test.c \
 			ft_memset_test.c \
+			ft_lstnew_test.c \
+			ft_lstadd_front_test.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
