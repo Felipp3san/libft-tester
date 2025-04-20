@@ -6,7 +6,7 @@
 /*   By: fde-alme <fde-alme@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 15:40:31 by fde-alme          #+#    #+#             */
-/*   Updated: 2025/04/19 20:24:24 by fde-alme         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:39:11 by fde-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	main(void)
 	ft_isprint_test();
 	ft_strlen_test();
 	ft_memset_test();
+	ft_bzero_test();
 
 	printf("\n\033[1;36m");
 	printf("=========================================\n");

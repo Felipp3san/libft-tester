@@ -6,11 +6,11 @@
 /*   By: fde-alme <fde-alme@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 20:44:14 by fde-alme          #+#    #+#             */
-/*   Updated: 2025/04/19 16:25:24 by fde-alme         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:37:44 by fde-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tests.h"
+#include "tests.h"
 
 void ft_isdigit_test()
 {

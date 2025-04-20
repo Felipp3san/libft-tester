@@ -1,16 +1,15 @@
 CFLAGS = -Wall -Wextra -Werror -g
 
-MAIN_FILE = main_tests.c
-
-PRINT_FUNCTION = print_result.c
-
-SRC_FILES = ft_isalpha_test.c \
+SRC_FILES = main_tests.c \
+			print_result.c \
+			ft_isalpha_test.c \
 			ft_isdigit_test.c \
 			ft_isalnum_test.c \
 			ft_isascii_test.c \
 			ft_isprint_test.c \
 			ft_strlen_test.c \
 			ft_memset_test.c \
+			ft_bzero_test.c \
 			ft_lstnew_test.c \
 			ft_lstadd_front_test.c \
 			ft_lstsize_test.c \
@@ -25,7 +24,7 @@ SRC_FOLDER = ./srcs
 
 BUILD_FOLDER = ./srcs/build
 
-$(NAME): $(MAIN_FILE) $(addprefix $(BUILD_FOLDER)/, $(OBJ_FILES)) tests.h $(PRINT_FUNCTION)
+$(NAME): $(addprefix $(BUILD_FOLDER)/, $(OBJ_FILES))
 	cc $(CFLAGS) -o $@ $^ -L.. -lft
 
 $(BUILD_FOLDER)/%.o: $(SRC_FOLDER)/%.c

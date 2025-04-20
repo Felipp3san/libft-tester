@@ -6,11 +6,11 @@
 /*   By: fde-alme <fde-alme@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:28:16 by fde-alme          #+#    #+#             */
-/*   Updated: 2025/04/19 16:51:32 by fde-alme         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:37:58 by fde-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tests.h"
+#include "tests.h"
 
 void	ft_isascii_test()
 {

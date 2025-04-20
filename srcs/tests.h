@@ -6,7 +6,7 @@
 /*   By: fde-alme <fde-alme@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:33:15 by fde-alme          #+#    #+#             */
-/*   Updated: 2025/04/19 20:02:03 by fde-alme         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:44:52 by fde-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <ctype.h>
-# include  "../libft.h"
+# include  "../../libft.h"
 
 void	print_result(char *function_name, int all_passed);
 
@@ -34,6 +34,7 @@ void	ft_isascii_test();
 void	ft_isprint_test();
 void	ft_strlen_test();
 void	ft_memset_test();
+void	ft_bzero_test();
 
 // BONUS
 void	ft_lstnew_test();

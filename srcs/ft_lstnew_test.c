@@ -6,11 +6,11 @@
 /*   By: fde-alme <fde-alme@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 17:27:16 by fde-alme          #+#    #+#             */
-/*   Updated: 2025/04/19 17:39:44 by fde-alme         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:43:52 by fde-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tests.h"
+#include "tests.h"
 
 void	ft_lstnew_test()
 {
