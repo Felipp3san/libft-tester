@@ -6,7 +6,7 @@
 /*   By: fde-alme <fde-alme@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:33:15 by fde-alme          #+#    #+#             */
-/*   Updated: 2025/04/19 18:08:40 by fde-alme         ###   ########.fr       */
+/*   Updated: 2025/04/19 20:02:03 by fde-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,8 @@ void	ft_memset_test();
 // BONUS
 void	ft_lstnew_test();
 void	ft_lstadd_front_test();
+void	ft_lstsize_test();
+void	ft_lstlast_test();
+void	ft_lstadd_back_test();
 
 #endif

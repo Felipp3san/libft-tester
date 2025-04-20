@@ -12,7 +12,10 @@ SRC_FILES = ft_isalpha_test.c \
 			ft_strlen_test.c \
 			ft_memset_test.c \
 			ft_lstnew_test.c \
-			ft_lstadd_front_test.c
+			ft_lstadd_front_test.c \
+			ft_lstsize_test.c \
+			ft_lstlast_test.c \
+			ft_lstadd_back_test.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
@@ -22,17 +25,17 @@ SRC_FOLDER = ./srcs
 
 BUILD_FOLDER = ./srcs/build
 
-$(NAME): $(addprefix $(BUILD_FOLDER)/, $(OBJ_FILES)) tests.h $(PRINT_FUNCTION)
-	cc $(CFLAGS) -o $@ $(MAIN_FILE) $^ -L.. -lft
+$(NAME): $(MAIN_FILE) $(addprefix $(BUILD_FOLDER)/, $(OBJ_FILES)) tests.h $(PRINT_FUNCTION)
+	cc $(CFLAGS) -o $@ $^ -L.. -lft
 
 $(BUILD_FOLDER)/%.o: $(SRC_FOLDER)/%.c
 	@mkdir -p $(BUILD_FOLDER) 
 	cc $(CFLAGS) -o $@ -c $^
+
+re: fclean $(NAME)
 
 clean:
 	rm -rf $(BUILD_FOLDER)/*.o
 
 fclean:
 	rm -rf $(BUILD_FOLDER)
-
-re: fclean all

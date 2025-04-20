@@ -6,7 +6,7 @@
 /*   By: fde-alme <fde-alme@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 15:40:31 by fde-alme          #+#    #+#             */
-/*   Updated: 2025/04/19 18:22:06 by fde-alme         ###   ########.fr       */
+/*   Updated: 2025/04/19 20:24:24 by fde-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,26 @@
 
 void	print_header(void)
 {
-	printf("\n\033[1;36m"); // Bold Cyan text
+	printf("\n\033[1;36m");
 	printf("=========================================\n");
 	printf("            🔍 LIBFT TESTER 🔍           \n");
 	printf("=========================================\n");
 	printf("👤 User: fde-alme\n");
 	printf("📧 Email: fde-alme@student.42porto.com\n");
 	printf("=========================================\n");
-	printf("\033[0m"); // Reset formatting
+	printf("\033[0m"); 
 }
 
 
 int	main(void)
 {
 	print_header();
+
+	printf("\n\033[1;36m");
+	printf("=========================================\n");
+	printf("                 MANDATORY               \n");
+	printf("=========================================\n");
+	printf("\033[0m"); 
 	ft_isalpha_test();
 	ft_isdigit_test();
 	ft_isalnum_test();
@@ -36,8 +42,16 @@ int	main(void)
 	ft_strlen_test();
 	ft_memset_test();
 
+	printf("\n\033[1;36m");
+	printf("=========================================\n");
+	printf("                   BONUS                 \n");
+	printf("=========================================\n");
+	printf("\033[0m"); 
 	ft_lstnew_test();
 	ft_lstadd_front_test();
+	ft_lstsize_test();
+	ft_lstlast_test();
+	ft_lstadd_back_test();
 
 	return (0);
 }
