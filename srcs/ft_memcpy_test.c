@@ -12,8 +12,10 @@
 
 #include "tests.h"
 
-void	test_ft_memcpy()
+void	ft_memcpy_test()
 {
+	char	*function_name = "ft_memcpy";
+	int		all_passed = 1;
 	char *src;
 	char dest[10];
 	char dest2[10];
@@ -21,39 +23,14 @@ void	test_ft_memcpy()
 	src = "TesteTest";
 	ft_memcpy(dest, src, 10);
 	memcpy(dest2, src, 10);
-	if (*dest == *dest2)
-	{
-		printf("Value in dest (my function): %s\n", dest);
-		printf("Value in dest (original function): %s\n", dest2);
-		printf("ft_memcpy test 1 passed!\n");
-	}
-	else
-	{
-		printf("Value in pointer (my function): %s\n", dest);
-		printf("Value in pointer (original function): %s\n", dest2);
-		printf("ft_memcpy test 1 failed.\n");
-	}
+	if (strcmp(dest, dest2) != 0)
+		all_passed = 0;
 
 	src = "Hello";
 	ft_memcpy(dest, src, 5);
 	memcpy(dest2, src, 5);
-	if (*dest == *dest2)
-	{
-		printf("Value in dest (my function): %s\n", dest);
-		printf("Value in dest (original function): %s\n", dest2);
-		printf("ft_memcpy test 2 passed!\n");
-	}
-	else
-	{
-		printf("Value in pointer (my function): %s\n", dest);
-		printf("Value in pointer (original function): %s\n", dest2);
-		printf("ft_memcpy test 2 failed.\n");
-	}
-}
+	if (strcmp(dest, dest2) != 0)
+		all_passed = 0;
 
-int	main(void)
-{
-	test_ft_memcpy();
-	return (0);
+	print_result(function_name, all_passed);
 }
-

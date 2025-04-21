@@ -63,5 +63,10 @@ void	ft_lstadd_back_test()
 
 	ft_lstadd_back(NULL, NULL);
 
+	free(elem1);
+	free(elem2);
+	free(elem3);
+	free(elem4);
+
 	print_result(function_name, all_passed);
 }

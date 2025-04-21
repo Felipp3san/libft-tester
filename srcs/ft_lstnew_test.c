@@ -31,5 +31,7 @@ void	ft_lstnew_test()
 	if (node->next != NULL)
 		all_passed = 0;
 
+	free(node);
+
 	print_result(function_name, all_passed);
 }

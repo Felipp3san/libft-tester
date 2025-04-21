@@ -12,77 +12,33 @@
 
 #include "tests.h"
 
-void	test_ft_strlcpy()
+void	ft_strlcpy_test()
 {
-	char *src;
-	char dest[10];
-	char dest2[10];
-	size_t size;
-	size_t size2;
+	char	*function_name = "ft_strlcpy";
+	int		all_passed = 1;
+	char	dest[10];
+	char	dest2[10];
+	char	*src;
+	size_t	size;
+	size_t	size2;
 
 	src = "TesteTest";
 	size = ft_strlcpy(dest, src, 10);
 	size2 = strlcpy(dest2, src, 10);
-	if (*dest == *dest2)
-	{
-		printf("Value in dest (my function): %s\n", dest);
-		printf("Returned value (my function) %zu\n", size);
-		printf("Value in dest (original function): %s\n", dest2);
-		printf("Returned value (original function) %zu\n", size2);
-		printf("ft_strlcpy test 1 passed!\n");
-	}
-	else
-	{
-		printf("Value in pointer (my function): %s\n", dest);
-		printf("Returned value (my function) %zu\n", size);
-		printf("Value in pointer (original function): %s\n", dest2);
-		printf("Returned value (original function) %zu\n", size2);
-		printf("ft_strlcpy test 1 failed.\n");
-	}
+	if (strcmp(dest, dest2) != 0 && size != size2)
+		all_passed = 0;
 	
 	src = "HelloWorld!!!!!";
 	size = ft_strlcpy(dest, src, 10);
 	size2 = strlcpy(dest2, src, 10);
-	if (*dest == *dest2)
-	{
-		printf("Value in dest (my function): %s\n", dest);
-		printf("Returned value (my function) %zu\n", size);
-		printf("Value in dest (original function): %s\n", dest2);
-		printf("Returned value (original function) %zu\n", size2);
-		printf("ft_strlcpy test 2 passed!\n");
-	}
-	else
-	{
-		printf("Value in pointer (my function): %s\n", dest);
-		printf("Returned value (my function) %zu\n", size);
-		printf("Value in pointer (original function): %s\n", dest2);
-		printf("Returned value (original function) %zu\n", size2);
-		printf("ft_strlcpy test 2 failed.\n");
-	}
+	if (strcmp(dest, dest2) != 0 && size != size2)
+		all_passed = 0;
 
 	src = "Hello";
 	size = ft_strlcpy(dest, src, 10);
 	size2 = strlcpy(dest2, src, 10);
-	if (*dest == *dest2)
-	{
-		printf("Value in dest (my function): %s\n", dest);
-		printf("Returned value (my function) %zu\n", size);
-		printf("Value in dest (original function): %s\n", dest2);
-		printf("Returned value (original function) %zu\n", size2);
-		printf("ft_strlcpy test 2 passed!\n");
-	}
-	else
-	{
-		printf("Value in pointer (my function): %s\n", dest);
-		printf("Returned value (my function) %zu\n", size);
-		printf("Value in pointer (original function): %s\n", dest2);
-		printf("Returned value (original function) %zu\n", size2);
-		printf("ft_strlcpy test 2 failed.\n");
-	}
-}
+	if (strcmp(dest, dest2) != 0 && size != size2)
+		all_passed = 0;
 
-int	main(void)
-{
-	test_ft_strlcpy();
-	return (0);
+	print_result(function_name, all_passed);
 }

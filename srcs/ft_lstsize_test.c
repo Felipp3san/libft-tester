@@ -58,6 +58,11 @@ void	ft_lstsize_test()
 
 	if (ft_lstsize(NULL) != 0)
 		all_passed = 0;
+
+	free(elem1);
+	free(elem2);
+	free(elem3);
+	free(elem4);
 	
 	print_result(function_name, all_passed);
 }

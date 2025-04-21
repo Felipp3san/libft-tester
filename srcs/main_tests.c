@@ -42,6 +42,10 @@ int	main(void)
 	ft_strlen_test();
 	ft_memset_test();
 	ft_bzero_test();
+	ft_memcpy_test();
+	ft_memmove_test();
+	ft_strlcpy_test();
+	ft_strlcat_test();
 
 	printf("\n\033[1;36m");
 	printf("=========================================\n");

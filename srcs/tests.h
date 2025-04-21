@@ -27,6 +27,7 @@
 
 void	print_result(char *function_name, int all_passed);
 
+// MANDATORY
 void	ft_isalpha_test();
 void	ft_isdigit_test();
 void	ft_isalnum_test();
@@ -35,6 +36,10 @@ void	ft_isprint_test();
 void	ft_strlen_test();
 void	ft_memset_test();
 void	ft_bzero_test();
+void	ft_memcpy_test();
+void	ft_memmove_test();
+void	ft_strlcpy_test();
+void	ft_strlcat_test();
 
 // BONUS
 void	ft_lstnew_test();

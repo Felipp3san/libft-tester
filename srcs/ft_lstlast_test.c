@@ -58,5 +58,10 @@ void	ft_lstlast_test()
 
 	ft_lstadd_front(NULL, NULL);
 
+	free(elem1);
+	free(elem2);
+	free(elem3);
+	free(elem4);
+
 	print_result(function_name, all_passed);
 }

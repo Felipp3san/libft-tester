@@ -12,47 +12,25 @@
 
 #include "tests.h"
 
-void	test_ft_memmove()
+void	ft_memmove_test()
 {
-	char *src;
-	char dest[10];
-	char dest2[10];
+	char	*function_name = "ft_memmove";
+	int		all_passed = 1;
+	char	dest[10];
+	char	dest2[10];
+	char	*src;
 
 	src = "TesteTest";
 	ft_memmove(dest, src, 10);
 	memmove(dest2, src, 10);
-	if (*dest == *dest2)
-	{
-		printf("Value in dest (my function): %s\n", dest);
-		printf("Value in dest (original function): %s\n", dest2);
-		printf("ft_memmove test 1 passed!\n");
-	}
-	else
-	{
-		printf("Value in pointer (my function): %s\n", dest);
-		printf("Value in pointer (original function): %s\n", dest2);
-		printf("ft_memmove test 1 failed.\n");
-	}
+	if (strcmp(dest, dest2) != 0)
+		all_passed = 0;
 
 	src = "Hello";
 	ft_memmove(dest, src, 5);
 	memmove(dest2, src, 5);
-	if (*dest == *dest2)
-	{
-		printf("Value in dest (my function): %s\n", dest);
-		printf("Value in dest (original function): %s\n", dest2);
-		printf("ft_memmove test 2 passed!\n");
-	}
-	else
-	{
-		printf("Value in pointer (my function): %s\n", dest);
-		printf("Value in pointer (original function): %s\n", dest2);
-		printf("ft_memmove test 2 failed.\n");
-	}	
-}
+	if (strcmp(dest, dest2) != 0)
+		all_passed = 0;
 
-int	main(void)
-{
-	test_ft_memmove();
-	return (0);
+	print_result(function_name, all_passed);
 }

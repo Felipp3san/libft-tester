@@ -12,47 +12,57 @@
 
 #include "tests.h"
 
-int	main(void)
+void	ft_strlcat_test(void)
 {
+	char	*function_name = "ft_strlcat";
+	int		all_passed = 1;
+	int		copy;
+	int		original;
 	char	buffer[10];
+	char	buffer2[10];
 	char	*str;
 
 	str = " This string";
 	// Test 1
-	printf("=== Test 1 ===\n");
 	ft_strlcpy(buffer, "Concat", 10);
-	printf("My function: %lu Result: %s\n", ft_strlcat(buffer, str, sizeof(buffer)), buffer);
-	ft_strlcpy(buffer, "Concat", 10);
-	printf("Original: %lu Result: %s\n", strlcat(buffer, str, sizeof(buffer)), buffer);
+	ft_strlcpy(buffer2, "Concat", 10);
+	copy = ft_strlcat(buffer, str, sizeof(buffer));
+	original = strlcat(buffer2, str, sizeof(buffer2));
+	if (strcmp(buffer, buffer2) != 0 && original != copy)
+		all_passed = 0;
 
 	// Test 2
-	printf("=== Test 2 ===\n");
 	ft_strlcpy(buffer, "", 10);
-	printf("My function: %lu Result: %s\n", ft_strlcat(buffer, str, sizeof(buffer)), buffer);
-	ft_strlcpy(buffer, "", 10);
-	printf("Original: %lu Result: %s\n", strlcat(buffer, str, sizeof(buffer)), buffer);
+	ft_strlcpy(buffer2, "", 10);
+	copy = ft_strlcat(buffer, str, sizeof(buffer));
+	original = strlcat(buffer2, str, sizeof(buffer2));
+	if (strcmp(buffer, buffer2) != 0 && original != copy)
+		all_passed = 0;
 
 	// Test 3
-	printf("=== Test 3 ===\n");
 	ft_strlcpy(buffer, "Test 3", 10);
-	printf("My function: %lu Result: %s\n", ft_strlcat(buffer, str, 0), buffer);
-	ft_strlcpy(buffer, "Test 3", 10);
-	printf("Original: %lu Result: %s\n", strlcat(buffer, str, 0), buffer);
+	ft_strlcpy(buffer2, "Test 3", 10);
+	copy = ft_strlcat(buffer, str, 0);
+	original = strlcat(buffer2, str, 0);
+	if (strcmp(buffer, buffer2) != 0 && original != copy)
+		all_passed = 0;
 
 	// Test 4
-	printf("=== Test 4 ===\n");
 	ft_strlcpy(buffer, "1234567890", 10);
-	printf("My function: %lu Result: %s\n", ft_strlcat(buffer, str, 1), buffer);
-	ft_strlcpy(buffer, "1234567890", 10);
-	printf("Original: %lu Result: %s\n", strlcat(buffer, str, 1), buffer);
+	ft_strlcpy(buffer2, "1234567890", 10);
+	copy = ft_strlcat(buffer, str, 1);
+	original = strlcat(buffer2, str, 1);
+	if (strcmp(buffer, buffer2) != 0 && original != copy)
+		all_passed = 0;
 
 	// Test 5
-	printf("=== Test 5 ===\n");
 	str = "123";
 	ft_strlcpy(buffer, "", 1);
-	printf("My function: %lu Result: %s\n", ft_strlcat(buffer, str, 1), buffer);
-	ft_strlcpy(buffer, "", 1);
-	printf("Original: %lu Result: %s\n", strlcat(buffer, str, 1), buffer);
+	ft_strlcpy(buffer2, "", 1);
+	copy = ft_strlcat(buffer, str, 1);
+	original = strlcat(buffer2, str, 1);
+	if (strcmp(buffer, buffer2) != 0 && original != copy)
+		all_passed = 0;
 
-	return (0);
+	print_result(function_name, all_passed);
 }
