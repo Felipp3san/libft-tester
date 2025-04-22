@@ -23,13 +23,13 @@ void	ft_memchr_test()
 	// TEST 1
 	ptr1 = (char *) ft_memchr(str, 's', 5);
 	ptr2 = (char *) memchr(str, 's', 5);
-	if (strcmp(ptr1, ptr2))
+	if (strncmp(ptr1, ptr2, 5))
 		all_passed = 0;
 
 	// TEST 2
 	ptr1 = (char *) ft_memchr(str, 'z', 5);
 	ptr2 = (char *) memchr(str, 'z', 5);
-	if (strcmp(ptr1, ptr2))
+	if (strncmp(ptr1, ptr2, 5))
 		all_passed = 0;
 
 	// TEST 3

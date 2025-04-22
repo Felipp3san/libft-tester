@@ -20,6 +20,7 @@
 # include <limits.h>
 # include <strings.h>
 # include <string.h>
+# include <bsd/string.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <ctype.h>
@@ -47,7 +48,7 @@ void	ft_strrchr_test();
 void	ft_strncmp_test();
 void	ft_memchr_test();
 void	ft_memcmp_test();
-//void	ft_strnstr_test();
+void	ft_strnstr_test();
 void	ft_atoi_test();
 
 // BONUS

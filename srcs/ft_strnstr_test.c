@@ -25,42 +25,42 @@ void	ft_strnstr_test()
 	needle = "this";
 	custom = ft_strnstr(haystack, needle, 17);
 	original = strnstr(haystack, needle, 17);
-	if (strcmp(original, custom) != 0)
+	if (custom && original && strcmp(original, custom) != 0)
 		all_passed = 0;
 
 	haystack = "Find this string!";
 	needle = "this";
 	custom = ft_strnstr(haystack, needle, 0);
 	original = strnstr(haystack, needle, 0);
-	if (strcmp(original, custom) != 0)
+	if (custom && original && strcmp(original, custom) != 0)
 		all_passed = 0;
 
 	haystack = "Find this string!";
 	needle = "";
 	custom = ft_strnstr(haystack, needle, 17);
 	original = strnstr(haystack, needle, 17);
-	if (strcmp(original, custom) != 0)
+	if (custom && original && strcmp(original, custom) != 0)
 		all_passed = 0;
 	
 	haystack = "Find this string!";
 	needle = "ZZXXZXX";
 	custom = ft_strnstr(haystack, needle, 17);
 	original = strnstr(haystack, needle, 17);
-	if (strcmp(original, custom) != 0)
+	if (custom && original && strcmp(original, custom) != 0)
 		all_passed = 0;
 
 	haystack = "";
 	needle = "ZZXXZXX";
 	custom = ft_strnstr(haystack, needle, 1);
 	original = strnstr(haystack, needle, 1);
-	if (strcmp(original, custom) != 0)
+	if (custom && original && strcmp(original, custom) != 0)
 		all_passed = 0;
 
 	haystack = "Needle in the end of the string";
 	needle = "the";
 	custom = ft_strnstr(haystack, needle, 11);
 	original = strnstr(haystack, needle, 11);
-	if (strcmp(original, custom) != 0)
+	if (custom && original && strcmp(original, custom) != 0)
 		all_passed = 0;
 
 	print_result(function_name, all_passed);

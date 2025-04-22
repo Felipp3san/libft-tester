@@ -12,7 +12,7 @@
 
 #include "tests.h"
 
-void	ft_strchr_test(void)
+void	ft_strrchr_test(void)
 {
 	char	*function_name = "ft_strrchr";
 	int		all_passed = 1;
@@ -39,7 +39,6 @@ void	ft_strchr_test(void)
 	if (original != NULL && custom != NULL)
 		all_passed = 0;
 
-	printf("=== Test 5 ===\n");
 	custom = ft_strrchr("", '\0');
 	original = strrchr("", '\0');
 	if (original != custom)
