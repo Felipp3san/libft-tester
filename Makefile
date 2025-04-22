@@ -14,11 +14,18 @@ SRC_FILES = main_tests.c \
 			ft_memmove_test.c \
 			ft_strlcpy_test.c \
 			ft_strlcat_test.c \
+			ft_toupper_test.c \
+			ft_tolower_test.c \
+			ft_strrchr_test.c \
+			ft_strncmp_test.c \
+			ft_memchr_test.c \
+			ft_memcmp_test.c \
+			ft_atoi_test.c \
 			ft_lstnew_test.c \
 			ft_lstadd_front_test.c \
 			ft_lstsize_test.c \
 			ft_lstlast_test.c \
-			ft_lstadd_back_test.c
+			ft_lstadd_back_test.c \
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 

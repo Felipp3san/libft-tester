@@ -12,8 +12,10 @@
 
 #include "tests.h"
 
-void	test_ft_strncmp()
+void	ft_strncmp_test()
 {
+	char	*function_name = "ft_strncmp";
+	int		all_passed = 1;
 	char	*str1;
 	char	*str2;
 	int		result;
@@ -22,46 +24,18 @@ void	test_ft_strncmp()
 	str2 = "Teste1";
 
 	result = ft_strncmp(str1, str2, 6);
-	if (result == 0)
-	{
-		printf("ft_strncmp test 1 passed!\n");
-		printf("Return value: %d\n", result); 
-	}
-	else
-	{
-		printf("ft_strncmp test 1 failed.\n");
-		printf("Return value: %d\n", result); 
-	}
+	if (result != 0)
+		all_passed = 0;
 
 	str1 = "Tes";
 	str2 = "Teste1";
 	result = ft_strncmp(str1, str2, 2);
-	if (result == 0)
-	{
-		printf("ft_strncmp test 2 passed!\n");
-		printf("Return value: %d\n", result); 
-	}
-	else
-	{
-		printf("ft_strncmp test 2 failed.\n");
-		printf("Return value: %d\n", result); 
-	}
+	if (result != 0)
+		all_passed = 0;
 
 	result = ft_strncmp(str1, str2, 4);
-	if (result == -116)
-	{
-		printf("ft_strncmp test 3 passed!\n"); 
-		printf("Return value: %d\n", result); 
-	}
-	else
-	{
-		printf("ft_strncmp test 3 failed.\n");
-		printf("Return value: %d\n", result); 
-	}
-}
+	if (result != -116)
+		all_passed = 0;
 
-int	main(void)
-{
-	test_ft_strncmp();
-	return (0);
+	print_result(function_name, all_passed);
 }

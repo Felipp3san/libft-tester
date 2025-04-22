@@ -12,8 +12,10 @@
 
 #include "tests.h"
 
-void	test_ft_memcmp()
+void	ft_memcmp_test()
 {
+	char	*function_name = "ft_memcmp";
+	int		all_passed = 1;
 	char	str1[7] = "Teste1";
 	char	str2[7] = "Teste1";
 	int		result_ft;
@@ -22,20 +24,15 @@ void	test_ft_memcmp()
 	// TEST 1
 	result_ft = ft_memcmp(str1, str2, 7);
 	result = memcmp(str1, str2, 7);
-	if (result_ft == result)
-		printf("ft_memcmp test 1 passed!\n");
-	else
-		printf("ft_memcmp test 1 failed.\n");
+	if (result_ft != result)
+		all_passed = 0;
 
 	// TEST 2
 	ft_strlcpy(str1, "Test", 7);
-
 	result_ft = ft_memcmp(str1, str2, 7);
 	result = memcmp(str1, str2, 7);
-	if (result_ft < 0 && result < 0)
-		printf("ft_memcmp test 2 passed!\n");
-	else
-		printf("ft_memcmp test 2 failed.\n");
+	if (result_ft && result)
+		all_passed = 0;
 
 	// TEST 3
 	ft_strlcpy(str1, "", 7);
@@ -43,11 +40,8 @@ void	test_ft_memcmp()
 
 	result_ft = ft_memcmp(str1, str2, 7);
 	result = memcmp(str1, str2, 7);
-
-	if (result_ft < 0 && result < 0)
-		printf("ft_memcmp test 3 passed!\n");
-	else
-		printf("ft_memcmp test 3 failed.\n");
+	if (result_ft && result)
+		all_passed = 0;
 
 	// TEST 4
 	ft_strlcpy(str1, "", 7);
@@ -56,15 +50,8 @@ void	test_ft_memcmp()
 	result_ft = ft_memcmp(str1, str2, 7);
 	result = memcmp(str1, str2, 7);
 
-	if (result_ft == result)
-		printf("ft_memcmp test 4 passed!\n");
-	else
-		printf("ft_memcmp test 4 failed.\n");
-}
+	if (result_ft != result)
+		all_passed = 0;
 
-int	main(void)
-{
-	test_ft_memcmp();
-	return (0);
+	print_result(function_name, all_passed);
 }
-

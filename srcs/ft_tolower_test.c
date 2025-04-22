@@ -12,37 +12,27 @@
 
 #include "tests.h"
 
-void	test_ft_tolower()
+void	ft_tolower_test()
 {
+	char	*function_name = "ft_tolower";
+	int		all_passed = 1;
 	int	result;
 
 	result = ft_tolower(65);
-	if (result == 97)
-		printf("ft_tolower test 1 passed!\n");
-	else
-		printf("ft_tolower test 1 failed.\n");
+	if (result != 97)
+		all_passed = 0;
 
 	result = ft_tolower(79);
-	if (result == 111)
-		printf("ft_tolower test 2 passed!\n");
-	else
-		printf("ft_tolower test 2 failed.\n");
+	if (result != 111)
+		all_passed = 0;
 
 	result = ft_tolower(54);
-	if (result == 54)
-		printf("ft_tolower test 3 passed!\n");
-	else
-		printf("ft_tolower test 3 failed.\n");
+	if (result != 54)
+		all_passed = 0;
 
 	result = ft_tolower(32);
-	if (result == 32)
-		printf("ft_tolower test 4 passed!\n");
-	else
-		printf("ft_tolower test 4 failed.\n");
-}
+	if (result != 32)
+		all_passed = 0;
 
-int	main(void)
-{
-	test_ft_tolower();
-	return (0);
+	print_result(function_name, all_passed);
 }

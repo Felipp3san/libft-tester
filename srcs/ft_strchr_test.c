@@ -12,65 +12,33 @@
 
 #include "tests.h"
 
-void	test_ft_strchr()
+void	ft_strchr_test()
 {
+	char	*function_name = "ft_strchr";
+	int		all_passed = 1;
 	char	*target;
 	char	*located;
 
 	target = "Test string";
 	located = ft_strchr(target, 's');
-	if (*located == 's')
-	{
-		printf("ft_toupper test 1 passed!\n");
-		printf("located char: %c\n", *located);
-		printf("address: %p\n", located);
-	}
-	else
-		printf("ft_toupper test 1 failed.\n");
+	if (*located != 's')
+		all_passed = 0;
 
 	located = ft_strchr(target, 'i');
-	if (*located == 'i')
-	{
-		printf("ft_toupper test 2 passed!\n");
-		printf("located char: %c\n", *located);
-		printf("address: %p\n", located);
-	}
-	else
-		printf("ft_toupper test 2 failed.\n");
+	if (*located != 'i')
+		all_passed = 0;
 
 	located = ft_strchr(target, 'T');
-	if (*located == 'T')
-	{
-		printf("ft_toupper test 3 passed!\n");
-		printf("located char: %c\n", *located);
-		printf("address: %p\n", located);
-	}
-	else
-		printf("ft_toupper test 3 failed.\n");
+	if (*located != 'T')
+		all_passed = 0;
 
 	located = ft_strchr(target, '\0');
-	if (*located == '\0')
-	{
-		printf("ft_toupper test 4 passed!\n");
-		printf("located char: %c\n", *located);
-		printf("address: %p\n", located);
-	}
-	else
-		printf("ft_toupper test 4 failed.\n");
+	if (*located != '\0')
+		all_passed = 0;
 
 	located = strchr(target, 'z');
-	if (located == NULL)
-	{
-		printf("ft_toupper test 5 passed!\n");
-		printf("located char: NULL\n");
-		printf("address: NULL\n");
-	}
-	else
-		printf("ft_toupper test 5 failed.\n");
-}
+	if (located != NULL)
+		all_passed = 0;
 
-int	main(void)
-{
-	test_ft_strchr();
-	return (0);
+	print_result(function_name, all_passed);
 }

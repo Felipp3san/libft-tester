@@ -12,40 +12,38 @@
 
 #include "tests.h"
 
-int	main(void)
+void	ft_strchr_test(void)
 {
+	char	*function_name = "ft_strrchr";
+	int		all_passed = 1;
 	char	*custom;
 	char	*original;
 
-	printf("=== Test 1 ===\n");
 	custom = ft_strrchr("Find the last ch in this string", 'i');
 	original = strrchr("Find the last ch in this string", 'i');
-	printf("Located char add: %p - char: %c\n", custom, *custom);
-	printf("Located char add: %p - char: %c\n", original, *original);
+	if (original != custom)
+		all_passed = 0;
 
-	printf("=== Test 2 ===\n");
 	custom = ft_strrchr("Find the last ch in this string", ' ');
 	original = strrchr("Find the last ch in this string", ' ');
-	printf("Located char add: %p - char: %c\n", custom, *custom);
-	printf("Located char add: %p - char: %c\n", original, *original);
+	if (original != custom)
+		all_passed = 0;
 
-	printf("=== Test 3 ===\n");
 	custom = ft_strrchr("Find the last ch in this string", '\0');
 	original = strrchr("Find the last ch in this string", '\0');
-	printf("Located char add: %p - char: %c\n", custom, *custom);
-	printf("Located char add: %p - char: %c\n", original, *original);
+	if (original != custom)
+		all_passed = 0;
 
-	printf("=== Test 4 ===\n");
 	custom = ft_strrchr("", 'a');
 	original = strrchr("", 'a');
-	if (original == NULL && custom == original)
-		printf("Both functions returned NULL\n");
+	if (original != NULL && custom != NULL)
+		all_passed = 0;
 
 	printf("=== Test 5 ===\n");
 	custom = ft_strrchr("", '\0');
 	original = strrchr("", '\0');
-	printf("Located char add: %p - char: %c\n", custom, *custom);
-	printf("Located char add: %p - char: %c\n", original, *original);
-
-	return (0);
+	if (original != custom)
+		all_passed = 0;
+	
+	print_result(function_name, all_passed);
 }

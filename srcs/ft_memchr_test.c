@@ -12,8 +12,10 @@
 
 #include "tests.h"
 
-void	test_ft_memchr()
+void	ft_memchr_test()
 {
+	char	*function_name = "ft_memchr";
+	int		all_passed = 1;
 	char str[5] = "Test";
 	char *ptr1;
 	char *ptr2;
@@ -21,65 +23,26 @@ void	test_ft_memchr()
 	// TEST 1
 	ptr1 = (char *) ft_memchr(str, 's', 5);
 	ptr2 = (char *) memchr(str, 's', 5);
-	if ((ptr1 != NULL)  && (ptr2 != NULL) && *ptr1 == 's' && *ptr2 == 's')
-	{
-		printf("located char: %c\n", *ptr1);
-		printf("address: %p\n", ptr1);
-		printf("located char (original): %c\n", *ptr2);
-		printf("address (original): %p\n", ptr2);
-		printf("ft_memchr test 1 passed!\n");
-	}
-	else
-		printf("ft_memchr test 1 failed.\n");
+	if (strcmp(ptr1, ptr2))
+		all_passed = 0;
 
-	printf("\n");
 	// TEST 2
 	ptr1 = (char *) ft_memchr(str, 'z', 5);
 	ptr2 = (char *) memchr(str, 'z', 5);
-	if ((ptr1 == NULL) && (ptr2 == NULL))
-	{
-		printf("located char: NULL\n");
-		printf("address: NULL\n");
-		printf("located char (original): NULL\n");
-		printf("address (original): NULL\n");
-		printf("ft_memchr test 2 passed!\n");
-	}
-	else
-		printf("ft_memchr test 2 failed.\n");
+	if (strcmp(ptr1, ptr2))
+		all_passed = 0;
 
-	printf("\n");
 	// TEST 3
 	ptr1 = (char *) ft_memchr(str, 'z', 5);
 	ptr2 = (char *) memchr(str, 'z', 5);
-	if ((ptr1 == NULL) && (ptr2 == NULL))
-	{
-		printf("located char: NULL\n");
-		printf("address: NULL\n");
-		printf("located char (original): NULL\n");
-		printf("address (original): NULL\n");
-		printf("ft_memchr test 3 passed!\n");
-	}
-	else
-		printf("ft_memchr test 3 failed.\n");
+	if ((ptr1 != NULL) && (ptr2 != NULL))
+		all_passed = 0;
 
-	printf("\n");
 	// TEST 4
 	ptr1 = (char *) ft_memchr(str, '\0', 5);
 	ptr2 = (char *) memchr(str, '\0', 5);
-	if ((ptr1 != NULL)  && (ptr2 != NULL) && *ptr1 == '\0' && *ptr2 == '\0')
-	{
-		printf("located char: %c\n", *ptr1);
-		printf("address: %p\n", ptr1);
-		printf("located char (original): %c\n", *ptr2);
-		printf("address (original): %p\n", ptr2);
-		printf("ft_memchr test 4 passed!\n");
-	}
-	else
-		printf("ft_memchr test 4 failed.\n");
-}
+	if (*ptr1 != '\0' && *ptr2 != '\0')
+		all_passed = 0;
 
-int	main(void)
-{
-	test_ft_memchr();
-	return (0);
+	print_result(function_name, all_passed);
 }

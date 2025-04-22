@@ -40,6 +40,15 @@ void	ft_memcpy_test();
 void	ft_memmove_test();
 void	ft_strlcpy_test();
 void	ft_strlcat_test();
+void	ft_toupper_test();
+void	ft_tolower_test();
+void	ft_strchr_test();
+void	ft_strrchr_test();
+void	ft_strncmp_test();
+void	ft_memchr_test();
+void	ft_memcmp_test();
+//void	ft_strnstr_test();
+void	ft_atoi_test();
 
 // BONUS
 void	ft_lstnew_test();

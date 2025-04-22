@@ -46,6 +46,15 @@ int	main(void)
 	ft_memmove_test();
 	ft_strlcpy_test();
 	ft_strlcat_test();
+	ft_toupper_test();
+	ft_tolower_test();
+	ft_strchr_test();
+	ft_strrchr_test();
+	ft_strncmp_test();
+	ft_memchr_test();
+	ft_memcmp_test();
+	//ft_strnstr_test();
+	ft_atoi_test();
 
 	printf("\n\033[1;36m");
 	printf("=========================================\n");

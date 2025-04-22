@@ -12,60 +12,56 @@
 
 #include "tests.h"
 
-int	main(void)
+void	ft_strnstr_test()
 {
+	char	*function_name = "ft_strnstr";
+	int		all_passed = 1;
 	char	*haystack;
 	char	*needle;
 	char	*original;
 	char	*custom;
 
-	printf("=== Test 1 ===\n");
 	haystack = "Find this string!";
 	needle = "this";
 	custom = ft_strnstr(haystack, needle, 17);
 	original = strnstr(haystack, needle, 17);
-	printf("Address: %p - String: %s\n", custom, custom);
-	printf("Address: %p - String: %s\n", original, original);
+	if (strcmp(original, custom) != 0)
+		all_passed = 0;
 
-	printf("=== Test 2 ===\n");
 	haystack = "Find this string!";
 	needle = "this";
 	custom = ft_strnstr(haystack, needle, 0);
 	original = strnstr(haystack, needle, 0);
-	printf("Address: %p - String: %s\n", custom, custom);
-	printf("Address: %p - String: %s\n", original, original);
+	if (strcmp(original, custom) != 0)
+		all_passed = 0;
 
-	printf("=== Test 3 ===\n");
 	haystack = "Find this string!";
 	needle = "";
 	custom = ft_strnstr(haystack, needle, 17);
 	original = strnstr(haystack, needle, 17);
-	printf("Address: %p - String: %s\n", custom, custom);
-	printf("Address: %p - String: %s\n", original, original);
+	if (strcmp(original, custom) != 0)
+		all_passed = 0;
 	
-	printf("=== Test 4 ===\n");
 	haystack = "Find this string!";
 	needle = "ZZXXZXX";
 	custom = ft_strnstr(haystack, needle, 17);
 	original = strnstr(haystack, needle, 17);
-	printf("Address: %p - String: %s\n", custom, custom);
-	printf("Address: %p - String: %s\n", original, original);
+	if (strcmp(original, custom) != 0)
+		all_passed = 0;
 
-	printf("=== Test 5 ===\n");
 	haystack = "";
 	needle = "ZZXXZXX";
 	custom = ft_strnstr(haystack, needle, 1);
 	original = strnstr(haystack, needle, 1);
-	printf("Address: %p - String: %s\n", custom, custom);
-	printf("Address: %p - String: %s\n", original, original);
+	if (strcmp(original, custom) != 0)
+		all_passed = 0;
 
-	printf("=== Test 6 ===\n");
 	haystack = "Needle in the end of the string";
 	needle = "the";
 	custom = ft_strnstr(haystack, needle, 11);
 	original = strnstr(haystack, needle, 11);
-	printf("Address: %p - String: %s\n", custom, custom);
-	printf("Address: %p - String: %s\n", original, original);
+	if (strcmp(original, custom) != 0)
+		all_passed = 0;
 
-	return (0);
+	print_result(function_name, all_passed);
 }
