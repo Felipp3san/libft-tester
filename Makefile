@@ -20,6 +20,7 @@ SRC_FILES = main_tests.c \
 			ft_strncmp_test.c \
 			ft_memchr_test.c \
 			ft_memcmp_test.c \
+			ft_strnstr_test.c \
 			ft_atoi_test.c \
 			ft_lstnew_test.c \
 			ft_lstadd_front_test.c \
@@ -36,7 +37,7 @@ SRC_FOLDER = ./srcs
 BUILD_FOLDER = ./srcs/build
 
 $(NAME): $(addprefix $(BUILD_FOLDER)/, $(OBJ_FILES)) 
-	cc $(CFLAGS) -o $@ $^ -L.. -lft
+	cc $(CFLAGS) -o $@ $^ -L.. -lft -lbsd
 
 $(BUILD_FOLDER)/%.o: $(SRC_FOLDER)/%.c
 	@mkdir -p $(BUILD_FOLDER) 
